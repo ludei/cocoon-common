@@ -4,7 +4,7 @@
  <p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
  <br/><p>You can contribute and help to create more awesome plugins. </p>
  <h2>Atomic Plugins - Cocoon Common</h2>
- <p>All the features described in Cocoon namespace are available for all the plugins listed below. Cocoon Commons are included in cocoon.js file that is required for running any of those plugins.</p> 
+ <p>All the features described in Cocoon namespace are available for all the plugins listed below. Cocoon Commons are included in cocoon.js file that is required for running any of those plugins in JavaScript.</p> 
  <ul>
  <li><a href="https://github.com/ludei/atomic-plugins-ads">Atomic Plugins for Ads</a></li>
  <li><a href="https://github.com/ludei/atomic-plugins-inapps">Atomic Plugins for In-App Purchases</a></li>
