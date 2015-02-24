@@ -1,13 +1,14 @@
 var gulp = require('gulp'); 
-var path = require('path');
 var jshint = require('gulp-jshint');
-var fs = require('fs');
 var jsdoc = require('gulp-jsdoc');
+var uglify = require('gulp-uglify');
 
 gulp.task('build', function () {
     return gulp.src('src/js/*.js')
     		.pipe(jshint())
-    		.pipe(jshint.reporter());
+    		.pipe(jshint.reporter())
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/js'))
 });
 
 gulp.task('doc', ["build"], function() {
