@@ -5,6 +5,10 @@
  <br/><p>You can contribute and help to create more awesome plugins. </p>
  <h2>Atomic Plugins - Cocoon Common</h2>
  <p>All the features described in Cocoon namespace are available for all the plugins listed below. Cocoon Commons are included in cocoon.js file that is required for running any of those plugins.</p> 
+ <ul>
+ <li><a href="https://github.com/ludei/atomic-plugins-ads">Atomic Plugins for Ads</a></li>
+ <li><a href="https://github.com/ludei/atomic-plugins-inapps">Atomic Plugins for In-App Purchases</a></li>
+ </ul>
  <h3>Documentation</h3>
  <p>Select the specific namespace below to open the relevant documentation section:</p>
  <ul>
@@ -175,8 +179,8 @@
 
     /**
      * This constructor creates a new Signal that holds and emits different events that are specified inside each extension.
-     * @memberof Cocoon.Signal
-     * @private
+     * @constructor Cocoon.Signal
+     * @memberof Cocoon
      */
     Cocoon.Signal = function() {
         this.signals = {};
@@ -262,6 +266,7 @@
     /**
      * Returns the platform where the app is running.
      * @function getPlatform
+     * @memberOf Cocoon
      * @returns {Cocoon.PlatformType} The platform where the app is running.
      * var platform = Cocoon.InApp.getPlatform();
      */
