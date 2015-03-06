@@ -42,16 +42,6 @@
     Cocoon.version = "1.0";
 
     /**
-     * Is the native environment available? true if so.
-     * @property {bool} version
-     * @memberof Cocoon
-     * @private
-     * @example
-     * if(Cocoon.nativeAvailable) { ... do native stuff here ... }
-     */
-    Cocoon.nativeAvailable = (!!window.cordova);
-
-    /**
      * This utility function allows to create an object oriented like hierarchy between two functions using their prototypes.
      * This function adds a "superclass" and a "__super" attributes to the subclass and it's functions to reference the super class.
      * @memberof Cocoon
@@ -111,8 +101,11 @@
      * @param {array} args The arguments of the function to be called
      */
     Cocoon.callNative = function(serviceName, functionName, args, succeesCallback, failCallback) {
-        if (Cocoon.nativeAvailable) {
-            cordova.exec(succeesCallback, failCallback, serviceName, functionName, args);
+        if (window.cordova) {
+            window.cordova.exec(succeesCallback, failCallback, serviceName, functionName, args);
+        }
+        else {
+            console.error("window.cordova not found");
         }
     };
 
