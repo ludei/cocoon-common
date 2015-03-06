@@ -268,7 +268,20 @@
         if (cachedPlatform) {
             return cachedPlatform;
         }
+
         var ua = navigator.userAgent;
+
+        if (navigator.isCocoonJS) {
+            if (/ios/ig.test(ua)) {
+                cachedPlatform = Cocoon.PlatformType.IOS;
+            }
+            else {
+                cachedPlatform = Cocoon.PlatformType.ANDROID;
+            }
+            return cachedPlatform;
+        }
+
+
         if (/(iPad|iPhone|iPod)/g.test(ua)) {
             cachedPlatform = Cocoon.PlatformType.IOS;
         } else if (/Kindle/i.test(ua) || /Silk/i.test(ua) || /KFTT/i.test(ua) || /KFOT/i.test(ua) ||
