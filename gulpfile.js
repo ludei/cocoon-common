@@ -2,15 +2,16 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jsdoc = require('gulp-jsdoc');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 
 gulp.task('build', function () {
-    return gulp.src('src/js/*.js')
+    gulp.src('src/js/*.js')
     		.pipe(jshint())
     		.pipe(jshint.reporter())
+            .pipe(concat('cocoon.js'))
             .pipe(uglify())
-            .pipe(gulp.dest('dist/js'))
+            .pipe(gulp.dest('src/cordova/www'));
 });
-
 gulp.task('doc', ["build"], function() {
 
     var config = require('./doc_template/js/jsdoc.conf.json');
