@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Atomic Plugins - Source: /Users/LibelulaV/Documents/ludei/cocoon-common/src/js/cocoon.js</title>
+	<title>Atomic Plugins</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -103,6 +103,7 @@
  &lt;ul>
  &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-ads">Atomic Plugins for Ads&lt;/a>&lt;/li>
  &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-inapps">Atomic Plugins for In-App Purchases&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-share">Atomic Plugins Share&lt;/a>&lt;/li>
  &lt;/ul>
  &lt;h3>Documentation&lt;/h3>
  &lt;p>Select the specific namespace below to open the relevant documentation section:&lt;/p>
@@ -110,14 +111,14 @@
  &lt;li>&lt;a href="Cocoon.html">Cocoon&lt;/a>&lt;/li>
  &lt;li>&lt;a href="http://ludei.github.io/atomic-plugins-ads/dist/doc/js/Cocoon.Ad.html">Ads&lt;/a>&lt;/li>
  &lt;li>&lt;a href="http://ludei.github.io/atomic-plugins-inapps/dist/doc/js/Cocoon.InApp.html">InApps&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="http://ludei.github.io/atomic-plugins-share/dist/doc/js/Cocoon.Share.html">Share&lt;/a>&lt;/li>
  &lt;/ul>
  &lt;p> We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
  just drop us a line at our forum and we will do our best to help you out.&lt;/p>
  &lt;h3>Tools&lt;/h3>
  &lt;a href="http://support.ludei.com/hc/communities/public/topics">&lt;img src="img/cocoon-tools-1.png" />&lt;/a>
- &lt;a href="http://support.ludei.com/hc">&lt;img src="img/cocoon-tools-2.png" />&lt;/a>
- &lt;a href="https://cloud.ludei.com/">&lt;img src="img/cocoon-tools-3.png" />&lt;/a>
- &lt;a href="https://www.ludei.com/cocoonjs/how-to-use/">&lt;img src="img/cocoon-tools-4.png" />&lt;/a>
+ &lt;a href="https://cocoon.io/doc">&lt;img src="img/cocoon-tools-2.png" />&lt;/a>
+ &lt;a href="http://cocoon.io/">&lt;img src="img/cocoon-tools-3.png" />&lt;/a>
  * @version 1.0
  */
 (function() {
@@ -135,16 +136,6 @@
      * console.log(Cocoon.version);
      */
     Cocoon.version = "1.0";
-
-    /**
-     * Is the native environment available? true if so.
-     * @property {bool} version
-     * @memberof Cocoon
-     * @private
-     * @example
-     * if(Cocoon.nativeAvailable) { ... do native stuff here ... }
-     */
-    Cocoon.nativeAvailable = (!!window.cordova);
 
     /**
      * This utility function allows to create an object oriented like hierarchy between two functions using their prototypes.
@@ -206,8 +197,11 @@
      * @param {array} args The arguments of the function to be called
      */
     Cocoon.callNative = function(serviceName, functionName, args, succeesCallback, failCallback) {
-        if (Cocoon.nativeAvailable) {
-            cordova.exec(succeesCallback, failCallback, serviceName, functionName, args);
+        if (window.cordova) {
+            window.cordova.exec(succeesCallback, failCallback, serviceName, functionName, args);
+        }
+        else {
+            console.error("window.cordova not found");
         }
     };
 
@@ -370,7 +364,20 @@
         if (cachedPlatform) {
             return cachedPlatform;
         }
+
         var ua = navigator.userAgent;
+
+        if (navigator.isCocoonJS) {
+            if (/ios/ig.test(ua)) {
+                cachedPlatform = Cocoon.PlatformType.IOS;
+            }
+            else {
+                cachedPlatform = Cocoon.PlatformType.ANDROID;
+            }
+            return cachedPlatform;
+        }
+
+
         if (/(iPad|iPhone|iPod)/g.test(ua)) {
             cachedPlatform = Cocoon.PlatformType.IOS;
         } else if (/Kindle/i.test(ua) || /Silk/i.test(ua) || /KFTT/i.test(ua) || /KFOT/i.test(ua) ||

@@ -8,6 +8,7 @@
  <ul>
  <li><a href="https://github.com/ludei/atomic-plugins-ads">Atomic Plugins for Ads</a></li>
  <li><a href="https://github.com/ludei/atomic-plugins-inapps">Atomic Plugins for In-App Purchases</a></li>
+ <li><a href="https://github.com/ludei/atomic-plugins-share">Atomic Plugins Share</a></li>
  </ul>
  <h3>Documentation</h3>
  <p>Select the specific namespace below to open the relevant documentation section:</p>
@@ -15,14 +16,14 @@
  <li><a href="Cocoon.html">Cocoon</a></li>
  <li><a href="http://ludei.github.io/atomic-plugins-ads/dist/doc/js/Cocoon.Ad.html">Ads</a></li>
  <li><a href="http://ludei.github.io/atomic-plugins-inapps/dist/doc/js/Cocoon.InApp.html">InApps</a></li>
+ <li><a href="http://ludei.github.io/atomic-plugins-share/dist/doc/js/Cocoon.Share.html">Share</a></li>
  </ul>
  <p> We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
  just drop us a line at our forum and we will do our best to help you out.</p>
  <h3>Tools</h3>
  <a href="http://support.ludei.com/hc/communities/public/topics"><img src="img/cocoon-tools-1.png" /></a>
- <a href="http://support.ludei.com/hc"><img src="img/cocoon-tools-2.png" /></a>
- <a href="https://cloud.ludei.com/"><img src="img/cocoon-tools-3.png" /></a>
- <a href="https://www.ludei.com/cocoonjs/how-to-use/"><img src="img/cocoon-tools-4.png" /></a>
+ <a href="https://cocoon.io/doc"><img src="img/cocoon-tools-2.png" /></a>
+ <a href="http://cocoon.io/"><img src="img/cocoon-tools-3.png" /></a>
  * @version 1.0
  */
 (function() {
