@@ -29,7 +29,7 @@
 (function() {
 
     /**
-     * The "Cocoon" object holds all the CocoonJS Extensions and other stuff needed for the Cocoon environment.
+     * The "Cocoon" object holds all the Cocoon Extensions and other stuff needed for the Cocoon environment.
      * @namespace Cocoon
      */
     var Cocoon = window.Cocoon || (window.Cocoon = {});
