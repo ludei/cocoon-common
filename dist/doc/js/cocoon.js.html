@@ -124,10 +124,13 @@
 (function() {
 
     /**
-     * The "Cocoon" object holds all the CocoonJS Extensions and other stuff needed for the CocoonJS environment.
+     * The "Cocoon" object holds all the CocoonJS Extensions and other stuff needed for the Cocoon environment.
      * @namespace Cocoon
      */
-    Cocoon = window.Cocoon ? window.Cocoon : {};
+    var Cocoon = window.Cocoon || (window.Cocoon = {});
+    if (window.cordova &amp;&amp; typeof module !== 'undefined') {
+        module.exports = Cocoon;
+    }
 
     /**
      * @property {string} version Current version of the library.
@@ -168,27 +171,6 @@
     };
 
     /**
-     * This utility function copies the properties from one object to a new object array, the result object array can be used as arguments when calling Cocoon.callNative()
-     * @memberof Cocoon
-     * @static
-     * @private
-     * @param {object} obj The base object that contains all properties defined.
-     * @param {object} copy The object that user has defined.
-     */
-    Cocoon.clone = function(obj, copy) {
-        if (null === obj || "object" != typeof obj) return obj;
-        var arr = [];
-        for (var attr in obj) {
-            if (copy.hasOwnProperty(attr)) {
-                arr.push(copy[attr]);
-            } else {
-                arr.push(obj[attr]);
-            }
-        }
-        return arr;
-    };
-
-    /**
      * Bridge function to call native functions from JavaScript
      * @static
      * @private
@@ -196,35 +178,12 @@
      * @param {string} functionName The name of the function to be called inside the native extension object.
      * @param {array} args The arguments of the function to be called
      */
-    Cocoon.callNative = function(serviceName, functionName, args, succeesCallback, failCallback) {
+    Cocoon.exec = function(serviceName, functionName, args, succeesCallback, failCallback) {
         if (window.cordova) {
             window.cordova.exec(succeesCallback, failCallback, serviceName, functionName, args);
-        }
-        else {
+        } else {
             console.error("window.cordova not found");
         }
-    };
-
-    /**
-     * Returns an object retrieved from a path specified by a dot specified text path starting from a given base object.
-     * It could be useful to find the reference of an object from a defined base object. For example the base object could be window and the
-     * path could be "Cocoon.App" or "document.body".
-     * @static
-     * @param {object} baseObject The object to start from to find the object using the given text path.
-     * @param {string} objectPath The path in the form of a text using the dot notation. i.e. "document.body"
-     * @private
-     * @memberof Cocoon
-     * For example:
-     * var body = Cocoon.getObjectFromPath(window, "document.body");
-     */
-    Cocoon.getObjectFromPath = function(baseObject, objectPath) {
-        var parts = objectPath.split('.');
-        var obj = baseObject;
-        for (var i = 0, len = parts.length; i &lt; len; ++i) {
-            obj[parts[i]] = obj[parts[i]] || undefined;
-            obj = obj[parts[i]];
-        }
-        return obj;
     };
 
     /**
@@ -241,7 +200,7 @@
      * return extension;
      * });
      */
-    Cocoon.define = function(extName, ext) {
+    Cocoon.define = function(extName, ext, exportToModule) {
 
         var namespace = (extName.substring(0, 7) == "Cocoon.") ? extName.substr(7) : extName;
 
@@ -260,6 +219,13 @@
             if (!object) {
                 throw "Unable to create class " + extName;
             }
+        }
+
+        if (arguments.length &lt; 2) {
+            exportToModule = true;
+        }
+        if (exportToModule &amp;&amp; typeof module !== 'undefined') {
+            module.exports = object;
         }
 
         return true;
@@ -336,11 +302,11 @@
      * @memberOf Cocoon
      * @property {string} ANDROID Android.
      * @property {string} IOS iOS.
-     * @property {string} AMAZON Amazon. 
-     * @property {string} WINDOWS_PHONE Windows phone. 
-     * @property {string} BLACKBERRY Blackberry. 
-     * @property {string} OTHER Other. 
-     */   
+     * @property {string} AMAZON Amazon.
+     * @property {string} WINDOWS_PHONE Windows phone.
+     * @property {string} BLACKBERRY Blackberry.
+     * @property {string} OTHER Other.
+     */
     Cocoon.PlatformType = {
         ANDROID: "android",
         IOS: "ios",
@@ -370,8 +336,7 @@
         if (navigator.isCocoonJS) {
             if (/ios/ig.test(ua)) {
                 cachedPlatform = Cocoon.PlatformType.IOS;
-            }
-            else {
+            } else {
                 cachedPlatform = Cocoon.PlatformType.ANDROID;
             }
             return cachedPlatform;
@@ -399,8 +364,7 @@
 
     console.log("Created namespace: Cocoon");
 
-})();
-</pre>
+})();</pre>
         </article>
     </section>
 
