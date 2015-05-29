@@ -8,6 +8,7 @@
  <ul>
  <li><a href="https://github.com/ludei/atomic-plugins-ads">Atomic Plugins for Ads</a></li>
  <li><a href="https://github.com/ludei/atomic-plugins-inapps">Atomic Plugins for In-App Purchases</a></li>
+ <li><a href="https://github.com/ludei/atomic-plugins-social">Atomic Plugins for Social integration</a></li>
  <li><a href="https://github.com/ludei/atomic-plugins-share">Atomic Plugins Share</a></li>
  <li><a href="https://github.com/CocoonIO/cocoon-canvasplus">Canvas+ legacies</a></li>
  </ul>
@@ -17,8 +18,9 @@
  <li><a href="Cocoon.html">Cocoon</a></li>
  <li><a href="http://ludei.github.io/atomic-plugins-ads/dist/doc/js/Cocoon.Ad.html">Ads</a></li>
  <li><a href="http://ludei.github.io/atomic-plugins-inapps/dist/doc/js/Cocoon.InApp.html">InApps</a></li>
+ <li><a href="http://ludei.github.io/atomic-plugins-social/dist/doc/js/Cocoon.Social.html">Social</a></li>
  <li><a href="http://ludei.github.io/atomic-plugins-share/dist/doc/js/Cocoon.Share.html">Share</a></li>
-  <li><a href="http://cocoonio.github.io/cocoon-canvasplus/dist/doc/js/index.html">Canvas+ legacies</a></li>
+ <li><a href="http://cocoonio.github.io/cocoon-canvasplus/dist/doc/js/index.html">Canvas+ legacies</a></li>
  </ul>
  <p> We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
  just drop us a line at our forum and we will do our best to help you out.</p>
