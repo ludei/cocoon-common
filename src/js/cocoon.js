@@ -228,7 +228,8 @@
      * @function getPlatform
      * @memberOf Cocoon
      * @returns {Cocoon.PlatformType} The platform where the app is running.
-     * var platform = Cocoon.InApp.getPlatform();
+     * @exammple
+     * var platform = Cocoon.getPlatform();
      */
     Cocoon.getPlatform = function() {
 
