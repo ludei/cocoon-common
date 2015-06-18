@@ -129,116 +129,79 @@
 	<div class="row-fluid">
 
 		
-		<div class="span8">
-			
+			<div class="span12">
+				
 				<div id="main">
 					
 
 
-	<h1 class="page-title">Class: Signal</h1>
-<section>
+		<h1 class="page-title">Source: cocoon_share.js</h1>
+    
+    <section>
+        <article>
+            <pre class="sunlight-highlight-javascript linenums">(function() {
 
-<header>
-    <h2>
-        <span class="ancestors"><a href="Cocoon.html">Cocoon</a>.</span>
-    
+    var Cocoon = window.Cocoon;
+    if (!Cocoon &amp;&amp; window.cordova &amp;&amp; typeof require !== 'undefined') {
+        Cocoon = cordova.require('com.ludei.cocoon.common.Cocoon');
+    }
 
-    
-        Signal
-    
-    </h2>
-    
-</header>
+    /**
+    * @fileOverview
+    &lt;h2>Atomic Plugins Share&lt;/h2>
+    &lt;p>This &lt;a src="https://github.com/ludei/atomic-plugins-share">repository&lt;/a> contains a native Share API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.&lt;/p>
+    &lt;h3>Setup your project&lt;/h3>
+    &lt;p>Releases are deployed to Cordova Plugin Registry. 
+    You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Cocoon.io Cloud Server.&lt;/p>
+    &lt;ul>
+    &lt;code>cordova plugin add com.ludei.share;&lt;/code>&lt;br/>
+    &lt;/ul>
+    &lt;p>The following JavaScript files will be included in your html project by default during installation:&lt;/p>
+    &lt;ul>
+    &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-share/blob/master/src/js/cocoon_share.js">cocoon_share.js&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;h3>Documentation&lt;/h3>
+    &lt;p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
+    Select the specific namespace below to open the relevant documentation section:&lt;/p>
+    &lt;ul>
+    &lt;li>&lt;a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="Cocoon.Share.html">Share&lt;/a>&lt;/li>
+    &lt;/ul>
+    */
 
-<article>
-    <div class="container-overview">
-    
+    /**
+     * Cocoon.Share class provides a multiplatform, easy to use native Share API. 
+     * @namespace Cocoon.Share
+     */
+    Cocoon.define("Cocoon.Share", function(extension) {
+    /**
+    * Opens a given share native window to share some specific text content in 
+    * any system specific social sharing options. For example, Twitter, Facebook, SMS, Mail, ...
+    * @memberOf Cocoon.Share
+    * @function share
+    * @param text {string} The text content that will be shared.
+    * @param image {string} The image that will be shared. It can be a URL or a base64 image.
+    * @param callback {function} The callback params called when share completed or dimissed. Params: activity, completed, error
+    * @example
+    * Cocoon.Share.share("I have scored more points on Flappy Submarine!! Chooo choooo");
+    */
+        extension.share = function(text, image, callback) {
+            callback = callback || function(){};
+            Cocoon.exec('LDSharePlugin', 'share', [text, image], function(data){
+                callback(data[0], data[1], data[2]);
+            }, function(data) {
+                callback(data[0], data[1], data[2]);
+            });
+        };
 
-    
-        
-<dt>
-    <h4 class="name" id="Signal"><span class="type-signature"></span>new Signal<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>This constructor creates a new Signal that holds and emits different events that are specified inside each extension.</p>
-    </div>
-    
+        return extension;
+    });
 
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
+})();</pre>
+        </article>
+    </section>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
 
 
 
@@ -257,10 +220,6 @@
 				</footer>
 			</div>
 
-			
-			<div class="span3">
-				<div id="toc"></div>
-			</div>
 			
 			<br clear="both">
 		</div>

@@ -135,14 +135,16 @@
 					
 
 
-	<h1 class="page-title">Namespaces</h1>
+	<h1 class="page-title">Namespace: Banner</h1>
 <section>
 
 <header>
     <h2>
+        <span class="ancestors"><a href="Cocoon.html">Cocoon</a><a href="Cocoon.Ad.html">.Ad</a>.</span>
+    
 
     
-        
+        Banner
     
     </h2>
     
@@ -184,6 +186,35 @@
 
 
         
+            <h3>Example</h3>
+            
+    <pre class="sunlight-highlight-javascript">banner = Cocoon.Ad.createBanner();
+
+banner.on("load", function(){
+   console.log("Banner loaded " + banner.width, banner.height);
+   banner.show();
+});
+
+banner.on("fail", function(){
+   console.log("Banner failed to load");
+});
+
+banner.on("show", function(){
+   console.log("Banner shown a modal content");
+});
+
+banner.on("dismiss", function(){
+   console.log("Banner dismissed the modal content");
+});
+
+banner.on("click", function(){
+   console.log("Banner clicked");
+});
+
+banner.load();</pre>
+
+
+        
     
     </div>
 
@@ -194,47 +225,548 @@
     
 
     
-        <h3 class="subsection-title">Classes</h3>
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
-            <dt><a href="Cocoon.Signal.html">Signal</a></dt>
-            <dd></dd>
+            
+<dt>
+    <h4 class="name" id="hide"><span class="type-signature">&lt;static> </span>hide<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Hides the banner ad.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">banner = Cocoon.Ad.createBanner(settings);
+banner.hide(); </pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isReady"><span class="type-signature">&lt;static> </span>isReady<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Checks if the banner is loaded and ready</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var ready = banner.isReady();</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="load"><span class="type-signature">&lt;static> </span>load<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Loads a banner ad.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">banner = Cocoon.Ad.createBanner(settings);
+banner.load();  </pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setLayout"><span class="type-signature">&lt;static> </span>setLayout<span class="signature">(layout)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets a specific layout for a banner ad.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>layout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Cocoon.Ad.html#BannerLayout">Cocoon.Ad.BannerLayout</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The predefined layout for a banner ad.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">banner = Cocoon.Ad.createBanner(settings);
+banner.setLayout(layout); // If CUSTOM layout</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setPosition"><span class="type-signature">&lt;static> </span>setPosition<span class="signature">(x, y)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Sets a specific position for a banner ad in CUSTOM layout.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The top lef x coordinate of the banner.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The top lef y coordinate of the banner.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">banner = Cocoon.Ad.createBanner(settings);
+banner.setLayout(layout); // If CUSTOM layout
+banner.setPosition(x, y); </pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="show"><span class="type-signature">&lt;static> </span>show<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Shows the banner ad.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">myBanner = Cocoon.Ad.createBanner(settings);
+myBanner.show(); </pre>
+
+
+    
+</dd>
+
         </dl>
-    
-
-    
-        <h3 class="subsection-title">Namespaces</h3>
-
-        <dl>
-            <dt><a href="namespaces.html#Cocoon"><a href="Cocoon.html">Cocoon</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Ad"><a href="Cocoon.Ad.html">Ad</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Ad.Banner"><a href="Cocoon.Ad.Banner.html">Banner</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Ad.Interstitial"><a href="Cocoon.Ad.Interstitial.html">Interstitial</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.InApp"><a href="Cocoon.InApp.html">InApp</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Share"><a href="Cocoon.Share.html">Share</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Social"><a href="Cocoon.Social.html">Social</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Social.GameCenter"><a href="Cocoon.Social.GameCenter.html">GameCenter</a></a></dt>
-            <dd></dd>
-        
-            <dt><a href="namespaces.html#Cocoon.Social.Interface"><a href="Cocoon.Social.Interface.html">Interface</a></a></dt>
-            <dd></dd>
-        </dl>
-    
-
     
 
     
@@ -586,509 +1118,6 @@
         
     <pre class="sunlight-highlight-javascript">banner.on("show", function(){
    console.log("Banner shown a modal content");
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On click">On click</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Triggered when an interstitial is clicked.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">interstitial.on("click", function(){
-   console.log("Interstitial clicked");
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On dismiss">On dismiss</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Triggered when an interstitial is closed.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">interstitial.on("dimissed", function(){
-   console.log("Interstitial dimissed");
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On fail">On fail</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Triggered when the loading process of an interstitial has failed.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">interstitial.on("fail", function(error){
-   console.log("Interstitial failed to load: " + JSON.stringify(error));
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On load">On load</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Triggered when a new interstitial is loaded.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">banner.on("load", function(){
-   console.log("Interstitial loaded");
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On reward">On reward</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Triggered when an video reward is completed.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">interstitial.on("reward", function(quantity){
-   console.log("Reward completed. Earned " + quantity + " items");
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On show">On show</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Triggered when a new interstitial is shown.</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">interstitial.on("show", function(){
-   console.log("Interstitial shown");
-});</pre>
-
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="event:On purchase">On purchase</h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>Allows to listen to events about the purchasing process.</p>
-<ul>
-<li>The callback 'start' receives a parameter the product id of the product being purchased when the purchase of a product starts.</li>
-<li>The callback 'complete' receives as parameter the <a href="Cocoon.InApp.html#PurchaseInfo">Cocoon.InApp.PurchaseInfo</a> object of the product being purchased when the purchase of a product is completed.</li>
-<li>The callback 'error' receives a parameters the product id and an error message when the purchase of a product fails.</li>
-</ul>
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">Cocoon.InApp.on("purchase", {
-   start: function(productId) {
-       console.log("purchase started " + productId);
-   },
-   error: function(productId, error) {
-       console.log("purchase failed " + productId + " error: " + JSON.stringify(error));
-   },
-   complete: function(purchase) {
-       console.log("purchase completed " + JSON.stringify(purchase));
-   }
 });</pre>
 
 

@@ -135,7 +135,7 @@
 					
 
 
-	<h1 class="page-title">Class: Signal</h1>
+	<h1 class="page-title">Namespace: Share</h1>
 <section>
 
 <header>
@@ -144,7 +144,7 @@
     
 
     
-        Signal
+        Share
     
     </h2>
     
@@ -156,8 +156,58 @@
 
     
         
+            <div class="description"><p>Cocoon.Share class provides a multiplatform, easy to use native Share API.</p></div>
+        
+
+        
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
 <dt>
-    <h4 class="name" id="Signal"><span class="type-signature"></span>new Signal<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="share"><span class="type-signature">&lt;static> </span>share<span class="signature">(text, image, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -165,7 +215,8 @@
     
     
     <div class="description">
-        <p>This constructor creates a new Signal that holds and emits different events that are specified inside each extension.</p>
+        <p>Opens a given share native window to share some specific text content in 
+any system specific social sharing options. For example, Twitter, Facebook, SMS, Mail, ...</p>
     </div>
     
 
@@ -173,6 +224,101 @@
     
     
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The text content that will be shared.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The image that will be shared. It can be a URL or a base64 image.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The callback params called when share completed or dimissed. Params: activity, completed, error</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
     
     
     
@@ -214,21 +360,15 @@
     
     
     
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">Cocoon.Share.share("I have scored more points on Flappy Submarine!! Chooo choooo");</pre>
+
+
+    
 </dd>
 
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
+        </dl>
     
 
     
