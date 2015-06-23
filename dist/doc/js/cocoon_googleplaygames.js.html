@@ -118,6 +118,11 @@
 							
 						</li>
 						
+						<li>
+							
+							
+						</li>
+						
 
 					</ul>
 				</li>
@@ -148,6 +153,7 @@
 
     /**
      * Cocoon Social Interface for the Google Play Games Extension.
+     * @namespace Cocoon.Social.GooglePlayGames
      */
     Cocoon.define("Cocoon.Social", function(extension) {
 
@@ -678,7 +684,7 @@
                                 scores.push(score);
                             }
                             var js = "addScores(" + JSON.stringify(scores) + ")";
-                            dialog.eval(js);
+                            //dialog.eval(js);
                         }
                     });
                 }
