@@ -98,6 +98,22 @@
 						
 						<li>
 							
+								<a href="Cocoon.Multiplayer.html">Multiplayer</a>
+							
+						</li>
+						
+						<li>
+							
+							
+						</li>
+						
+						<li>
+							
+							
+						</li>
+						
+						<li>
+							
 								<a href="Cocoon.Share.html">Share</a>
 							
 						</li>
@@ -202,6 +218,9 @@
         <h3 class="subsection-title">Classes</h3>
 
         <dl>
+            <dt><a href="Cocoon.Multiplayer.Match.html">Match</a></dt>
+            <dd></dd>
+        
             <dt><a href="Cocoon.Signal.html">Signal</a></dt>
             <dd></dd>
         </dl>
@@ -224,6 +243,15 @@
             <dd></dd>
         
             <dt><a href="namespaces.html#Cocoon.InApp"><a href="Cocoon.InApp.html">InApp</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#Cocoon.Multiplayer"><a href="Cocoon.Multiplayer.html">Multiplayer</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#Cocoon.Multiplayer.GameCenter"><a href="Cocoon.Multiplayer.GameCenter.html">GameCenter</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#Cocoon.Multiplayer.GooglePlayGames"><a href="Cocoon.Multiplayer.GooglePlayGames.html">GooglePlayGames</a></a></dt>
             <dd></dd>
         
             <dt><a href="namespaces.html#Cocoon.Share"><a href="Cocoon.Share.html">Share</a></a></dt>
@@ -1097,6 +1125,85 @@
    complete: function(purchase) {
        console.log("purchase completed " + JSON.stringify(purchase));
    }
+});</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="event:On restore products callbacks">On restore products callbacks</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Allows to listen to events about the restoring process.</p>
+<ul>
+<li>The callback 'dataReceived'</li>
+<li>The callback 'stateChanged'</li>
+<li>The callback 'connectionWithPlayerFailed' allows listening to events called when a netowrk connection with a player fails</li>
+<li>The callback 'failed' allows listening to events called when the match fails.</li>
+</ul>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">match.on("restore",{
+ dataReceived: function(match, data, playerId){ ... },
+ stateChanged: function(match, playerId, connectionState){ ... },
+ connectionWithPlayerFailed: function(match, playerId, errorMsg){ ... }
+ failed: function(match, errorMsg){ ... }
 });</pre>
 
 
