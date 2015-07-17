@@ -163,14 +163,14 @@
             <pre class="sunlight-highlight-javascript linenums">(function(){
     /**
     * @fileOverview
-    &lt;h2>Atomic Plugins for Multiplayer&lt;/h2>
-    &lt;p>This &lt;a src="https://github.com/ludei/atomic-plugins-multiplayer">repository&lt;/a> contains a Social API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.&lt;/p>
+    &lt;h2>Cocoon Multiplayer&lt;/h2>
+    &lt;p>This repository contains a Social API.&lt;/p>
     &lt;h3>Setup your project&lt;/h3>
     &lt;p>Releases are deployed to Cordova Plugin Registry. 
     You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Cocoon.io Cloud Server.&lt;/p>
     &lt;ul>
-    &lt;code>cordova plugin add com.ludei.multiplayer.ios.gamecenter;&lt;/code>&lt;br/>
-    &lt;code>cordova plugin add com.ludei.multiplayer.android.googleplaygames;&lt;/code>&lt;br/>
+    &lt;code>cordova plugin add cocoon-plugin-multiplayer-ios-gamecenter;&lt;/code>&lt;br/>
+    &lt;code>cordova plugin add cocoon-plugin-multiplayer-android-googleplaygames;&lt;/code>&lt;br/>
     &lt;/ul>
     &lt;p>The following JavaScript files will be included in your html project by default during installation:&lt;/p>
     &lt;ul>
@@ -190,6 +190,7 @@
     }
     var Cocoon = window.Cocoon;
 /**
+ * Cocoon.Multiplayer interface provides an abstraction API for all the Multiplayer Services.
  * @namespace Cocoon.Multiplayer
  */
 Cocoon.define("Cocoon.Multiplayer" , function(extension){

@@ -163,8 +163,8 @@
             <pre class="sunlight-highlight-javascript linenums">(function() {
     /**
     * @fileOverview
-    &lt;h2>Atomic Plugins for Social integration&lt;/h2>
-    &lt;p>This &lt;a src="https://github.com/ludei/atomic-plugins-social">repository&lt;/a> contains a Social API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.&lt;/p>
+    &lt;h2>Cocoon Social&lt;/h2>
+    &lt;p>This repository contains a Social API.&lt;/p>
     &lt;p>Currently there are 3 social services implemented but new ones can be easily added:&lt;/p>
     &lt;ul>
     &lt;li>Game Center (iOs).&lt;/li>
@@ -175,12 +175,12 @@
     &lt;p>Releases are deployed to Cordova Plugin Registry. 
     You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Cocoon.io Cloud Server.&lt;/p>
     &lt;ul>
-    &lt;code>cordova plugin add com.ludei.social.ios.gamecenter;&lt;/code>&lt;br/>
-    &lt;code>cordova plugin add com.ludei.social.android.googleplaygames --variable APP_ID=the_app_id;&lt;/code>&lt;br/>
-    &lt;code>cordova plugin add com.ludei.social.ios.facebook;&lt;/code>&lt;br/>
-    &lt;code>cordova plugin add com.ludei.social.android.facebook;&lt;/code>&lt;br/>
+    &lt;code>cordova plugin add cocoon-plugin-social-ios-gamecenter;&lt;/code>&lt;br/>
+    &lt;code>cordova plugin add cocoon-plugin-social-android-googleplaygames --variable APP_ID=the_app_id;&lt;/code>&lt;br/>
+    &lt;code>cordova plugin add cocoon-plugin-social-ios-facebook;&lt;/code>&lt;br/>
+    &lt;code>cordova plugin add cocoon-plugin-social-android-facebook;&lt;/code>&lt;br/>
     &lt;/ul>
-    &lt;p>The following JavaScript files will be included in your html project by default during installation:&lt;/p>
+    &lt;p>The following JavaScript files will be included in your html5 project by default during installation:&lt;/p>
     &lt;ul>
     &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-social/blob/master/src/js/cocoon_social.js">cocoon_social.js&lt;/a>&lt;/li>
     &lt;li>&lt;a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js&lt;/a>&lt;/li>
@@ -219,7 +219,7 @@
     Cocoon.define("Cocoon.Social", function(extension) {
 
         /**
-         * This interface provides an abstraction API for all the Social Services, this is an interface and never should be call directly.
+         * Cocoon.Social interface provides an abstraction API for all the Social Services, this is an interface and never should be call directly.
          * Each Social service has it's own official API but can also be used within this API interface. In order to use this
          * interface you should call the method getSocialInterface(); that is available in the following classes:
          * - &lt;a href="">Facebook&lt;/a>
